@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+    <head><link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <title>Youtube.com</title>
+        <style>
+            .total{
+                
+                display:inline-block;
+            }
+            p{
+                margin-top: 0px;
+                margin-bottom: 0px;
+                font-family: Roboto,Arial;
+            }
+            .thumbnail{
+                width:100%;
+                position:relative;
+            }
+            .time{
+                font-family:roboto;
+                font-size:bold;
+                background-color: black;
+                color:white;
+                position:absolute;
+                bottom:9px;
+                right:5px;
+                padding-right: 4px;
+                padding-left: 4px;
+                padding-top: 2px;
+                padding-bottom: 2px;
+                border-radius: 3px;
+            }
+            img{
+                width:100%;
+                border-radius: 5px;
+            }
+            .title{
+                font-size:14px;
+                font-weight:bold;
+                display:inline-block;
+            }
+            .channel{
+                font-size: 12px;
+                color:rgb(170,170,170);
+                margin-top: 4px;
+                display:inline-block;
+            }
+            
+            .views{
+                font-size: 12px;
+                color:rgb(170,170,170);
+                margin-top: 2px;
+                display:inline-block;
+            }
+            .profile{
+                margin-right: 5px;
+            }
+            
+            .details{
+            
+                display:grid;
+                grid-template-columns: 22px 1fr;
+            }
+            .grid{
+                background-color: rgb(243, 243, 243);
+                display:grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                column-gap: 13px;
+                row-gap:17px;
+                padding-left: 90px;
+                padding-right: 30px;
+                padding-top:68px;
+                padding-bottom:38px ;
+            }
+            .Text{
+                display:flex;
+                flex-direction: column;
+                
+            }
+            .verticalheader{
+                background-color: rgb(255, 254, 254);
+                position:fixed;
+                left:0;
+                top:55px;
+                bottom:0;
+                width:74px;
+                z-index: 200;
+
+            }
+
+            .header{
+                
+                display: flex;
+                flex-direction:row;
+                justify-content: space-between;
+                margin-bottom: 10px;
+                position:fixed;
+                top:0;
+                right:0;
+                left:0;
+                background-color: white;
+                border-bottom-width: 1px;
+                border-bottom-style: solid;
+                border-bottom-color: rgb(213, 212, 212);
+                z-index: 100;
+            }
+            .leftmenu{
+                display:flex;
+                width:250px;
+                align-items: center;
+                padding-left: 10px;
+                
+
+            }
+
+            .middlemenu{
+                 display:flex;
+                 align-items: center;
+                flex:1;
+               
+                margin-left: 50px;
+                margin-right: 35px;
+                max-width: 450px;
+
+            }
+            .rightmenu{
+                display:flex;
+                align-items: center;
+                height:55px;
+                width:250px;
+                justify-content: space-between;
+                margin-right: 28px;
+                flex-shrink:0;
+            }
+
+            .hamburgerbutton{
+                height:30px;
+                padding-right:19px;
+                background-color:rgb(255, 255, 255);
+                
+                
+            }
+
+
+            .ytlogo{
+                height:28px;
+                margin-right: 35px;
+                margin-left: 15px;
+            }
+
+            .searchbutton{
+                height:40px;
+                width:60px;
+                border-style: solid;
+                border-width: 1px;
+                border-color: rgb(173, 170, 170);
+                border-radius: 2px;
+                margin-left: -2px;
+              
+            }
+
+            .searchmenu{
+                height:29px;
+                
+            }
+            .input{
+                flex:1;
+                height:36.3px;
+                width:0px;
+                border-style: solid;
+                border-width: 1px;
+                border-color: rgb(173, 170, 170);
+                border-radius: 2px;
+            }
+            
+            .input::placeholder{
+                font-family: Roboto;
+                font-size:18px;
+                padding-left: 8px;
+                
+            }
+
+            .voicebutton{
+                height:42px;
+                width:42px;
+                border-radius: 21px;
+                margin-left:15px ;
+                border-style: solid;
+                border-color:rgb(239, 235, 235);
+                
+            }
+
+            .input::placeholder{
+               
+            }
+            .upload{
+                height:39px;
+            }
+            .apps{
+                height:39px;
+            }
+            .notification{
+                height:39px;
+            }
+            .myprofile{
+               height:40px;
+               width:40px;
+               border-radius: 20px;
+
+            }
+
+
+            .sidebarmenu{
+                
+                display:flex;
+                flex-direction:column;
+                justify-content: center;
+                align-items: center;
+                height:78.2px;
+                
+            }
+            .sidebarmenu:hover{
+                background-color: rgb(237, 233, 233);
+
+            }
+            .sidebarmenu img{
+                height:25px;
+                margin-bottom: 5px;
+            }
+            .sidebarmenu div{
+                font-family:Roboto;
+                font-size: 10px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="verticalheader" >
+            <div class="sidebarmenu">
+                <img src="./Images/home.svg">
+                <div>Home</div>
+            </div>
+            <div class="sidebarmenu">
+                <img src="./Images/explore.svg">
+                <div>Explore</div>
+            </div>
+            <div class="sidebarmenu">
+                <img src="./Images/subscriptions.svg">
+                <div>Subscriptions</div>
+            </div>
+            <div class="sidebarmenu">
+                <img src="./Images/originals.svg">
+                <div>Originals</div>
+            </div>
+            <div class="sidebarmenu">
+                <img src="./Images/youtube-music.svg">
+                <div>Youtube Music</div>
+            </div>
+            <div class="sidebarmenu">
+                <img src="./Images/library.svg">
+                <div>Library</div>
+            </div>
+        </div>
+        <div class="header">
+            <div class="leftmenu">
+                <img class="hamburgerbutton" src="./Images/hamburger-menu.svg">
+                
+                <img class="ytlogo" src="./Images/youtube-logo.svg">
+            </div>
+            <div class="middlemenu">
+                <input class="input"  type="text" placeholder="Search">
+                <button class="searchbutton" >
+                    <img class="searchmenu" src="./Images/search.svg" >
+                </button>
+                <button class="voicebutton" ><img class="voicemenu" src="./Images/voice-search-icon.svg" alt=""></button>
+            </div>
+            <div class="rightmenu">
+                        <img class="upload" src="./Images/upload.svg">
+                        <img class="apps" src="./Images/youtube-apps.svg">
+                            <img class="notification" src="./Images/notifications.svg" >
+                           
+                        
+                        <img class="myprofile" src="./Images/myprofile.jpg">
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+        <div class="grid">
+        <div class="total">
+            <div class="thumbnail">
+                <img class="taylor1" src="./Images/taylor1.jpg">
+                <div class="time">4:33</div>
+            </div>
+            <div class="details">
+                <div class="profile"> 
+                    <img class="profileTay" src="./Images/profileTay.jpg" >
+                </div>
+                <div class="Text">
+                <div class="title">
+                    Taylor Swift - Blank Space
+                </div>
+                <div class="channel">
+                    Taylor Swift &#9835; 
+                </div>
+            
+                <div class="views">
+                    3.1B views  Nov 10, 2014
+            </div>
+            </div>
+         </div>
+        </div>
+
+
+        <div class="total">
+            <div class="thumbnail">
+                <img class="taylor1" src="./Images/taylor2.webp">
+                <div class="time">3:49</div>
+           
+            </div>
+            <div class="details">
+                <div class="profile"> 
+                    <img class="profileTay" src="./Images/profileTay.jpg" >
+                </div>
+                <div class="Text">
+                <p class="title">
+                    Taylor Swift - You Belong With me
+                <p class="channel">
+                    Taylor Swift &#9835; 
+                </p>
+            
+                <p class="views">
+                    1.4B views  Jun 17, 2009
+
+                </p>
+            </div>
+            </div>
+        </div>
+
+        <div class="total">
+            <div class="thumbnail">
+                <img class="taylor1" src="./Images/taylor3.webp">
+                <div class="time">3:57</div>
+            </div>
+            <div class="details">
+                <div class="profile"> 
+                    <img class="profileTay" src="./Images/profileTay.jpg" >
+                </div>
+                <div class="Text">
+                <p class="title">
+                    Taylor Swift - Love Story
+                </p>
+                <p class="channel">
+                    Taylor Swift &#9835; 
+                </p>
+            
+                <p class="views">
+                    668M views  Jun 17, 2009
+
+                </p>
+            </div>
+            </div>
+        </div>
+
+        <div class="total">
+            <div class="thumbnail">
+                <img class="taylor1" src="./Images/taylor4.webp">
+                <div class="time">4:35</div>
+            </div>
+            <div class="details">
+                <div class="profile"> 
+                    <img class="profileTay" src="./Images/profileTay.jpg" >
+                </div>
+                <div class="Text">
+                <p class="title">
+                    Taylor Swift - cardigan
+                </p>
+                <p class="channel">
+                    Taylor Swift &#9835; 
+                </p>
+            
+                <p class="views">
+                    120M views  Jul 24, 2020
+
+                </p>
+            </div>
+            </div>
+        </div>
+
+        <div class="total">
+            <div class="thumbnail">
+                <img class="taylor1" src="./Images/taylor5.webp">
+                <div class="time">3:55</div>
+            </div>
+            <div class="details">
+                <div class="profile"> 
+                    <img class="profileTay" src="./Images/profileTay.jpg" >
+                </div>
+                <div class="Text">
+                <p class="title">
+                    Taylor Swift - Wildest Dreams
+                </p>
+                <p class="channel">
+                    Taylor Swift &#9835; 
+                </p>
+            
+                <p class="views">
+                    861M views  Aug 31, 2015
+                </p>
+            </div>
+            </div>
+        </div>
+
+        <div class="total">
+            <div class="thumbnail">
+                <img class="taylor1" src="./Images/taylor6.webp">
+                <div class="time">3:55</div>
+            </div>
+            <div class="details">
+                <div class="profile"> 
+                    <img class="profileTay" src="./Images/profileTay.jpg" >
+                </div>
+                <div class="Text">
+                <p class="title">
+                    Taylor Swift - Delicate
+                </p>
+                <p class="channel">
+                    Taylor Swift &#9835; 
+                </p>
+            
+                <p class="views">
+                    497M views  Mar 12, 2018
+
+                </p>
+            </div>
+            </div>
+        </div>
+
+    </div>
+    </body>
+</html>
